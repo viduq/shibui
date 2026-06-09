@@ -347,12 +347,11 @@ h5 > code {
 }
 
 /* Time list */
-.time-list ul {
-  list-style: none;
-  margin-left: 0;
+.time-list {
+  border-collapse: collapse;
 }
 
-.time-list li {
+.time-list tbody tr {
   display: grid;
   grid-template-columns: auto 1fr;
   gap: var(--gap-base);
@@ -360,8 +359,18 @@ h5 > code {
   padding: var(--spacing-sm) 0;
 }
 
+.time-list__date {
+  font-family: var(--font-family-mono, monospace);
+  white-space: nowrap;
+}
+
+.time-list td {
+  border-bottom: none;
+  padding: initial;
+}
+
 @media (max-width: 600px) {
-  .time-list li {
+  .time-list tbody tr {
     grid-template-columns: 1fr;
     gap: var(--gap-small);
   }
