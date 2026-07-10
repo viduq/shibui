@@ -3,7 +3,7 @@
   {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
 
   {{/* Table of Contents */}}
-  {{ $hasToC := .Params.toc | default true }}
+  {{ $hasToC := site.Params.toc | default true }}
   {{ $headers := findRE "<h[2-6]" .Content }}
   {{ if and $hasToC (ge (len $headers) 1) }}
     <details class="toc" open>
